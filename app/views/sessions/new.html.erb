@@ -1,0 +1,14 @@
+<%= link_to "Monthly Schedule", monthlyschedule_path(@user) %>
+
+<div class = "login-page">
+  <h2>Log in</h2>
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: :name %>
+      <br>
+      <%= f.label :password %>
+      <%= f.text_field :password, autocomplete: "off", placeholder: :password %>
+      <br>
+      <%= f.submit "Login"%>
+    <% end %>
+</div>

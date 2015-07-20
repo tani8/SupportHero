@@ -1,0 +1,20 @@
+How To Run:
+
+  After cloning the repository, use these commands in your Terminal to install dependencies, setup the database, and boot up the server:
+
+    bundle install
+    rake db:create
+    rake db:migrate
+    rake db:seed
+    bin/rails server
+
+  User options:
+
+    Each user has been seeded and has a password that pertains to their user id.
+
+    functionality:
+      -view the scheduled employees for the month
+      -view today's support hero
+      -check out personal scheduled work dates for each employee
+      -login as a user
+      -have the ability to mark one date on your schedule as undoable
