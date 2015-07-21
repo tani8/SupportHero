@@ -43,13 +43,15 @@ supportHash = {
 
 test.uniq.length.times do |i|
 
-  User.create!({
+  u = User.create(
     name: test.uniq[i],
-    password: i.to_s,
+    password: "123",
+    email: '',
+    # password_confirmation: "123",
     image_url: Faker::Avatar.image,
-    schedule: supportHash,
-  })
-
+    schedule: supportHash
+  )
+  u.save
 end
 
 # days = ["Monday", "Tuesday", "Wedesday", "Thursday", "Friday"]

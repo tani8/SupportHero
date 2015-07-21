@@ -2,13 +2,24 @@
 
 <div class = "login-page">
   <h2>Log in</h2>
-    <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name, placeholder: :name %>
-      <br>
-      <%= f.label :password %>
-      <%= f.text_field :password, autocomplete: "off", placeholder: :password %>
-      <br>
-      <%= f.submit "Login"%>
+    <%# form_for(:session, url: login_path) do |f| %>
+      <%# f.label :name %>
+      <%# f.text_field :name, placeholder: :name %>
+      <!-- <br> -->
+      <%# f.label :password %>
+      <%# f.text_field :password, autocomplete: "off", placeholder: :password %>
+      <!-- <br> -->
+      <%# f.submit "Login"%>
+    <%# end %>
+
+    <%= form_tag '/login' do %>
+
+      Name: <%= text_field_tag :name %>
+      Password: <%= password_field_tag :password %>
+      <%= submit_tag "Login" %>
+
     <% end %>
+
+
+
 </div>
