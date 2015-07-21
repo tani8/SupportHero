@@ -7,6 +7,5 @@ class User < ActiveRecord::Base
   has_secure_password
   # attr_accessible :date
   validates_presence_of :name, :password
-  validates_uniqueness_of :name, :password
 
 end
