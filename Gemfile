@@ -29,6 +29,7 @@ gem 'foundation-icons-sass-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'hirb'
 gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '3.1.7'
 
@@ -58,3 +59,7 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
 end
+
+gem 'rails_12factor', group: :production
+ruby "2.0.0"
+gem 'puma'
