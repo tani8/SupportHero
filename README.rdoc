@@ -1,5 +1,7 @@
 How To Run:
 
+  If running GitHub files
+  ------------------------
   After cloning the repository, use these commands in your Terminal to install dependencies, setup the database, and boot up the server:
 
     bundle install
@@ -8,13 +10,17 @@ How To Run:
     rake db:seed
     bin/rails server
 
+    You may need to run ' heroku config:add TZ="America/Los_Angeles" ' from the command line if Date.time() in rails console doesn't show up accurately.
+
   User options:
 
-    Each user has been seeded and has a password that pertains to their user id.
+    Each user has been seeded and has a password that pertains to their id number minus one. For example, as the first user SHerry has an id of 1 so her password is 0.
 
     functionality:
       -view the scheduled employees for the month
       -view today's support hero
       -check out personal scheduled work dates for each employee
       -login as a user
+      -logout as a user
       -have the ability to mark one date on your schedule as undoable
+      -have the ability to swap up to one scheduled day with another user

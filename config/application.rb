@@ -33,3 +33,6 @@ module SupportHero
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
+
+# config.time_zone = "America/Los_Angeles"
+# config.active_record.default_timezone = :local
