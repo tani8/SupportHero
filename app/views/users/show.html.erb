@@ -1,14 +1,30 @@
-<%= link_to "Login", login_path(@user) %>
+<!-- links to page with July schedule -->
 <%= link_to "Monthly Schedule", monthlyschedule_path(@user) %>
-
+<!-- displays users -->
 <h3><%= @user.name %></h3>
 <img src="<%= @user.image_url %>"/>
-
+<!-- shows what daus they're assigned to work and gives them the option to mark one as undoable -->
 <% @user.schedule.each_pair do |key, value| %>
-    <% if(@user.name == value) %>
-      <br>
-    <div id="undoable">
-      <%= key %> <%= button_to "Undoable", user_path, data: {disable_with: "Undoable"}, :class => "button", :method => :put %>
-    </div>
+    <!-- checks if user is logged in -->
+    <% if(@user == current_user) %>
+      <!-- finds the value that matches current user's name -->
+      <% if(@user.name == value) %>
+        <br>
+      <div id="undoable">
+        <!-- displays assigned support dates and undoable buttons for those dates -->
+        <%= key %> <%= button_to "Undoable", user_path, data: {disable_with: "Undoable"}, :class => "button", :method => :put %>
+      </div>
+      <% end %>
+      <!-- checks if the user doesn't match current logged in user -->
+    <% else %>
+    <!-- finds user name as value in hash -->
+      <% if(@user.name == value) %>
+        <br>
+      <div id="swap">
+        <!-- outputs the dates and swap buttons -->
+        <%= key %> <%= button_to "Swap", user_path, data: {disable_with: "Swap"}, :class => "button", :method => :put %>
+      </div>
+      <% end %>
     <% end %>
+
 <% end %>

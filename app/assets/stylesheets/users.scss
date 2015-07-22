@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*website name - SUpport Hero*/
 h1{
   border: 2px solid green;
   padding: 2%;
@@ -12,24 +13,48 @@ h1{
 h2, h4, p{
   text-align: center;
 }
+
+/*login*/
 h2{
   text-decoration: underline;
 }
 
+/*consistent img sizes*/
 img{
   height: 15%;
   width: 15%;
 }
 
+/*monthly sched*/
 p{
   display: inline-block;
-  border: 2px solid green;
+  border: 2px solid black;
 }
-
+/*index*/
 .daily-hero{
   text-align: center;
 }
+/*index*/
+.user-dash{
+  margin: 2%;
+  padding: 5%;
+  text-align: center;
+}
+/*index - heroes not on duty*/
+#user{
+  display: inline;
+  margin-left: 2%;
+  text-align: center;
+}
 
-#login-sched{
-  text-align: right;
+/*index - not on duty hero images*/
+#user img{
+  height: 8%;
+  width: 8%;
+}
+
+/*index - todays support hero*/
+.support-hero{
+  margin: 8%;
+  border: 5px dashed black;
 }

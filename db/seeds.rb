@@ -45,7 +45,7 @@ test.uniq.length.times do |i|
 
   User.create(
     name: test.uniq[i],
-    password: i.to_s,
+    password: "#{i}",
     # email: '',
     # password_confirmation: "123",
     image_url: Faker::Avatar.image,

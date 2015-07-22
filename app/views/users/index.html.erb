@@ -1,34 +1,41 @@
-<div id="login-sched">
-  <%= link_to "Login", login_path(@user) %>
-  <%= link_to "Monthly Schedule", monthlyschedule_path(@user) %>
-</div>
+| <%= link_to "Monthly Schedule", monthlyschedule_path(@user) %>
 
-<% if(@weekends.include?(@today)) %>
-  <h3> ~ Support Heroes resting for the Weekend ~ </h3>
-<% end %>
+<div class="support-hero">
+  <!-- takes into account weekends where there aren't any support heroes -->
+  <% if(@weekends.include?(@today)) %>
+    <h3> ~ Support Heroes resting for the Weekend ~ </h3>
+  <% end %>
 
-<% @users.each do |user| %>
-  <% @dates.each_pair do |name, schedule| %>
-    <% if(schedule.include?(@today)) %>
-    <h3>
-      <div class="daily-hero">
-        <% if(name == user.name) %>
-          Today's Support Hero!
-          <br>
-          <img src="<%= user.image_url %>"/>
-          <br>
-          <%= name.upcase %>
-        <% end %>
-      </div>
-    </h3>
+  <% @users.each do |user| %>
+    <% @dates.each_pair do |name, schedule| %>
+    <!-- checks the current date -->
+      <% if(schedule.include?(@today)) %>
+      <h3>
+        <div class="daily-hero">
+          <!-- and displays the user who's assigned to today's date -->
+          <% if(name == user.name) %>
+            Today's Support Hero!
+            <br>
+            <img src="<%= user.image_url %>"/>
+            <br>
+            <%= name.upcase %>
+          <% end %>
+        </div>
+      </h3>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
+</div>
 
-<% @users.each do |user| %>
-  <li>
-    <%= link_to user.name, user_path(user.id) %>
-  </li>
-<% end %>
-
+<!-- displays all users on index page -->
+<div class="user-dash">
+  <h3> Heroes Not on Duty </h3>
+  <% @users.each do |user| %>
+    <div id="user">
+      <img src="<%= user.image_url %>"/>
+      <!-- outputs username and link to their personal work schedule page -->
+      <%= link_to user.name, user_path(user.id) %>
+    </div>
+  <% end %>
+</div>
 
