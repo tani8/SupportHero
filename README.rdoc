@@ -1,16 +1,19 @@
 How To Run:
 
-  If running GitHub files
-  ------------------------
-  After cloning the repository, use these commands in your Terminal to install dependencies, setup the database, and boot up the server:
+  If you're running GitHub files:
 
-    bundle install
-    rake db:create
-    rake db:migrate
-    rake db:seed
-    bin/rails server
+    After cloning the repository, use these commands in your Terminal to install dependencies, setup the database, and boot up the server:
 
-    You may need to run ' heroku config:add TZ="America/Los_Angeles" ' from the command line if Date.time() in rails console doesn't show up accurately.
+      bundle install
+      rake db:create
+      rake db:migrate
+      rake db:seed
+      bin/rails server
+
+
+  If instead you'd like to view the project hosted on Heroku, follow this link:
+  https://robot-support-hero.herokuapp.com/
+
 
   User options:
 
